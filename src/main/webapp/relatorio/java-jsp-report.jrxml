@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="java-jsp-report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="07f8cb98-da49-49d1-8629-16593d6c2b6d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="param_sub_report" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="extensaoFotoUser" class="java.lang.String">
+		<fieldDescription><![CDATA[extensaoFotoUser]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[numero]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[bairro]]></fieldDescription>
+	</field>
+	<field name="localidade" class="java.lang.String">
+		<fieldDescription><![CDATA[localidade]]></fieldDescription>
+	</field>
+	<field name="novo" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[novo]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="userAdmin" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[userAdmin]]></fieldDescription>
+	</field>
+	<field name="login" class="java.lang.String">
+		<fieldDescription><![CDATA[login]]></fieldDescription>
+	</field>
+	<field name="fotoUser" class="java.lang.String">
+		<fieldDescription><![CDATA[fotoUser]]></fieldDescription>
+	</field>
+	<field name="telefones" class="java.util.List">
+		<fieldDescription><![CDATA[telefones]]></fieldDescription>
+	</field>
+	<field name="rendamensal" class="java.lang.Double">
+		<fieldDescription><![CDATA[rendamensal]]></fieldDescription>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<fieldDescription><![CDATA[cep]]></fieldDescription>
+	</field>
+	<field name="perfil" class="java.lang.String">
+		<fieldDescription><![CDATA[perfil]]></fieldDescription>
+	</field>
+	<field name="senha" class="java.lang.String">
+		<fieldDescription><![CDATA[senha]]></fieldDescription>
+	</field>
+	<field name="uf" class="java.lang.String">
+		<fieldDescription><![CDATA[uf]]></fieldDescription>
+	</field>
+	<field name="useradmin" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[useradmin]]></fieldDescription>
+	</field>
+	<field name="logradouro" class="java.lang.String">
+		<fieldDescription><![CDATA[logradouro]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="dataNascimento" class="java.sql.Date">
+		<fieldDescription><![CDATA[dataNascimento]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[sexo]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<group name="grupo_user">
+		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement x="0" y="0" width="100" height="30" uuid="0eeea10a-7405-4cdc-9f2d-631db922d402">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="571ee87c-185b-45da-bc03-e4a04fce91b9"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+				</textField>
+				<textField pattern="MM/dd/yyyy">
+					<reportElement x="140" y="0" width="100" height="30" uuid="eda9136d-88ca-4837-8565-a5240af18736">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b85f030-ec26-4947-8bd8-7dc6084a2219"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{dataNascimento}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="0" width="330" height="69" uuid="f7806e22-dff6-4c3b-a4ec-de5fa38b2981"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de usuário]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="9df8813c-7b53-4d72-a757-358cf2666d14">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="571ee87c-185b-45da-bc03-e4a04fce91b9"/>
+				</reportElement>
+				<text><![CDATA[Nome
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="1" width="100" height="30" uuid="9d7014d5-ad5d-4000-a89c-6bb882cd7888">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b85f030-ec26-4947-8bd8-7dc6084a2219"/>
+				</reportElement>
+				<text><![CDATA[Data de nascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="1" width="100" height="30" uuid="17e7ca48-1a1d-40b3-a79b-cb9b78477ef1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c582999e-2a9e-4012-a5be-45869a9b17db"/>
+				</reportElement>
+				<text><![CDATA[Telefones]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="550" height="1" uuid="a19025af-b2cb-466f-a784-510d2916090b"/>
+			</line>
+			<subreport>
+				<reportElement x="450" y="1" width="100" height="29" uuid="8ec34af8-9d13-4aed-80a8-aa9a83c8e5dd"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{telefones})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{param_sub_report} + "sub_report_user.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>
