@@ -1,0 +1,162 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<nav class="pcoded-navbar">
+	<c:set var="perfil" scope="session" value='<%= request.getSession().getAttribute("perfilSession") %>' />
+	<div class="sidebar_toggle">
+		<a href="#"><i class="icon-close icons"></i></a>
+	</div>
+	<div class="pcoded-inner-navbar main-menu">
+		<div class="">
+			<div class="main-menu-header">
+				<c:if test="${imagemAvatar != '' && imagemAvatar != null}">
+					<img class="img-radius" name="fotoBase64" id="fotoBase64" alt="Imagem user"
+								width="70px" src="${imagemAvatar}" style="aspect-ratio: 1/1" />
+				</c:if>
+				<c:if test="${imagemAvatar == '' || imagemAvatar == null}">
+					<img class="img-radius" name="fotoBase64" id="fotoBase64" alt="Imagem user" width="70px"
+								src="<%= request.getContextPath() %>/assets/images/avatar-2.jpg" style="aspect-ratio: 1/1" />
+				</c:if>
+				<div class="user-details">
+					<span id="more-details"><%= session.getAttribute("usuario") %><i class="fa fa-caret-down"></i></span>
+				</div>
+			</div>
+
+			<div class="main-menu-content">
+				<ul>
+					<li class="more-details">
+						<!-- <a href="user-profile.html"><i class="ti-user"></i>Ver perfil</a>   -->
+						<!-- <a href="#!"> <i class="ti-settings"></i>Configurações</a>  -->
+						<a href="<%= request.getContextPath() %>/ServletLogin?acao=Logout"><i class="ti-layout-sidebar-left"></i>Sair</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--  
+		<div class="p-15 p-b-0">
+			<form class="form-material">
+				<div class="form-group form-primary">
+					<input type="text" name="footer-email" class="form-control"
+						required="required"> <span class="form-bar"></span> <label
+						class="float-label"><i class="fa fa-search m-r-10"></i>Buscar</label>
+				</div>
+			</form>
+		</div>
+		-->
+		<!-- <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Layout</div> -->
+		<ul class="pcoded-item pcoded-left-item">
+			<li class="active mt-2"><a href="<%= request.getContextPath() %>/principal/principal.jsp" class="waves-effect waves-dark"> <span class="pcoded-micon">
+				<i class="ti-home"></i><b>D</b></span> <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span> <span class="pcoded-mcaret"></span>
+			</a></li>
+			<li class="pcoded-hasmenu"><a href="javascript:void(0)" class="waves-effect waves-dark"> <span class="pcoded-micon">
+				<i class="ti-layout-grid2-alt"></i></span> <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Opções</span> <span class="pcoded-mcaret"></span>
+			</a>
+				<ul class="pcoded-submenu">
+				  <c:if test="${perfil == 'ADMIN'}">
+					<li class=" "><a href="<%= request.getContextPath() %>/ServletUsuarioController?acao=listarUser"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.basic-components.alert">Usuário</span> <span
+							class="pcoded-mcaret"></span>
+					</a></li>
+				  </c:if>
+				  <!-- 
+					<li class=" "><a href="breadcrumb.html"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.basic-components.breadcrumbs">Breadcrumbs</span> <span
+							class="pcoded-mcaret"></span>
+					</a></li>
+					<li class=" "><a href="button.html"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.basic-components.alert">Button</span> <span
+							class="pcoded-mcaret"></span>
+					</a></li>
+ 					-->
+				</ul></li>
+		</ul>
+
+		<div class="pcoded-navigation-label" data-i18n="nav.category.forms">Relatórios</div>
+		<ul class="pcoded-item pcoded-left-item">
+			<li><a href="<%= request.getContextPath() %>/principal/relUsuario.jsp" class="waves-effect waves-dark"> <span
+					class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span> <span
+					class="pcoded-mtext" data-i18n="nav.form-components.main">Usuário</span>
+					<span class="pcoded-mcaret"></span>
+			</a></li>
+			
+			<li><a href="<%= request.getContextPath() %>/principal/relUserGrafico.jsp" class="waves-effect waves-dark">
+					<span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+					<span class="pcoded-mtext" data-i18n="nav.form-components.main">Gráfico de Salário</span>
+					<span class="pcoded-mcaret"></span>
+			</a></li>
+			<!-- 
+			<li class="pcoded-hasmenu"><a href="javascript:void(0)"
+				class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+						class="ti-layout-grid2-alt"></i></span> <span class="pcoded-mtext"
+					data-i18n="nav.basic-components.main">Pages</span> <span
+					class="pcoded-mcaret"></span>
+			</a>
+				<ul class="pcoded-submenu">
+					<li class=" "><a href="auth-normal-sign-in.html"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.basic-components.alert">Login</span> <span
+							class="pcoded-mcaret"></span>
+					</a></li>
+					<li class=" "><a href="auth-sign-up.html"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.basic-components.breadcrumbs">Register</span> <span
+							class="pcoded-mcaret"></span>
+					</a></li>
+					<li class=" "><a href="sample-page.html"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.basic-components.breadcrumbs">Sample Page</span> <span
+							class="pcoded-mcaret"></span>
+					</a></li>
+				</ul></li>
+ 			-->
+		</ul>
+		<!--  
+		<div class="pcoded-navigation-label" data-i18n="nav.category.other">Other</div>
+		<ul class="pcoded-item pcoded-left-item">
+			<li class="pcoded-hasmenu "><a href="javascript:void(0)"
+				class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+						class="ti-direction-alt"></i><b>M</b></span> <span class="pcoded-mtext"
+					data-i18n="nav.menu-levels.main">Menu Levels</span> <span
+					class="pcoded-mcaret"></span>
+			</a>
+				<ul class="pcoded-submenu">
+					<li class=""><a href="javascript:void(0)"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.menu-levels.menu-level-21">Menu Level 2.1</span> <span
+							class="pcoded-mcaret"></span>
+					</a></li>
+					<li class="pcoded-hasmenu "><a href="javascript:void(0)"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-direction-alt"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.menu-levels.menu-level-22.main">Menu Level
+								2.2</span> <span class="pcoded-mcaret"></span>
+					</a>
+						<ul class="pcoded-submenu">
+							<li class=""><a href="javascript:void(0)"
+								class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+										class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+									data-i18n="nav.menu-levels.menu-level-22.menu-level-31">Menu
+										Level 3.1</span> <span class="pcoded-mcaret"></span>
+							</a></li>
+						</ul></li>
+					<li class=""><a href="javascript:void(0)"
+						class="waves-effect waves-dark"> <span class="pcoded-micon"><i
+								class="ti-angle-right"></i></span> <span class="pcoded-mtext"
+							data-i18n="nav.menu-levels.menu-level-23">Menu Level 2.3</span> <span
+							class="pcoded-mcaret"></span>
+					</a></li>
+
+				</ul></li>
+		</ul>
+		-->
+	</div>
+</nav>
