@@ -4,4 +4,4 @@ Projeto desenvolvido utilizando as tecnologias JSP, Java, CSS, Html, Boostratp, 
 
 O objetivo foi desenvolver um CRUD completo, de modo a demonstrar o que vem sendo estudado e abstraído das tecnoilogias supramencionadas.
 
-O projeto está disponível para acesso e teste aqui: http://www.diegooliveirapro.com.br/java-jsp/
+O projeto está disponível para acesso e teste aqui: https://tomcat.diegooliveirapro.com.br/java-jsp/
